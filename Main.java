@@ -82,14 +82,14 @@ public class Main {
                 Voo.ImprimirPassageiros();
                 break;
             case 2:
-                System.out.print("Digite o CPF do passageiro a ser pesquisado:");
+                System.out.println("Digite o CPF do passageiro a ser pesquisado:");
                 String cpf = teclado.nextLine();
                 Voo.ProcurarPassageiroCpf(cpf);
 
 
                 break;
             case 3:
-                System.out.print("Digite o nome do passageiro a ser pesquisado:");
+                System.out.println("Digite o nome do passageiro a ser pesquisado:");
                 String nome = teclado.nextLine();
                 Voo.ProcurarPassageiroNome(nome);
 
