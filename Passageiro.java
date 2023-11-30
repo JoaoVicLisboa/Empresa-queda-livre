@@ -1,5 +1,3 @@
-import jdk.dynalink.beans.StaticClass;
-
 public class Passageiro {
     private String CPF;
     private String Nome;

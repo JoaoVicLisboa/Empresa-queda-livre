@@ -1,11 +1,13 @@
 
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void loadData() {
         //cadastrar Passageiros
-        Voo voo01 = new Voo("BH","SP", 1010);
+        Voo voo01 = new Voo("BH","RIO", 1010);
+        Voo voo02 = new Voo("BH","SP", 2020);
+        Voo voo03 = new Voo("BH","BRASÍLIA", 3030);
         Passageiro Teste1 = new Passageiro("8484198-54","safada da silva","rua casada da silva","10:35",31,31,31,1010);
         Passageiro Teste2 = new Passageiro("8484198-53","gasosa da silva","rua casada da silva","10:35",31,31,31,1010);
         Passageiro Teste3 = new Passageiro("8484198-54","delicio da silva","rua casada da silva","10:35",31,31,31,1010);
@@ -30,16 +32,33 @@ public class Main {
 
     }
 
-    public static void telaBasica(){
+    public static int telaBasica(){
         Scanner in = new Scanner(System.in);
         System.out.println("Qual será o número de voo?");
-        String nVoo = in.nextLine();
-        String voo = "BH-SP";
-        System.out.println("\nEMPRESA AÉREA QUEDA LIVRE - VOO "+ voo);
+        System.out.println("[voo001]- BH-RIO");
+        System.out.println("[2]- BH-SP");
+        System.out.println("[3]- BH-BRASILIA");
+        int nVoo = in.nextInt();
+        while (nVoo<1 || nVoo>3) {
+            System.out.println("Opcao de voo nao encontrada!");
+            System.out.println("Digite novamente:");
+            nVoo = in.nextInt();
+        }
+        return nVoo;
+
     }
-    public static int menuPrincipal() {
+    public static int menuPrincipal(int numVoo) {
         int op;
+        String nomVoo;
+        if (numVoo == 1) {
+            nomVoo = "BH-RIO";
+        } else if (numVoo == 2) {
+            nomVoo = "BH-SP";
+        } else {
+            nomVoo = "BH-BRASILIA";
+        }
         Scanner in = new Scanner(System.in);
+        System.out.println("EMPRESA AEREA QUEDA LIVRE - VOO " +nomVoo);
         System.out.println("\n        MENU DE OPÇÕES");
         System.out.println("[1] Mostrar Lista de Passageiros ");
         System.out.println("[2] Pesquisar Passageiro por CPF");
@@ -110,11 +129,11 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int op = 0;
         loadData();
-        telaBasica();
+        int opc = telaBasica();
+        int op = 0;
         while (op != 9) {
-            op = menuPrincipal();
+            op = menuPrincipal(opc);
             menuSecundario(op);
         }
     }
