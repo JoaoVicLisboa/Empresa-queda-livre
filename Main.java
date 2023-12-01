@@ -8,16 +8,7 @@ public class Main {
         Voo voo01 = new Voo("BH","RIO", 1010);
         Voo voo02 = new Voo("BH","SP", 2020);
         Voo voo03 = new Voo("BH","BRASÍLIA", 3030);
-        Passageiro Teste1 = new Passageiro("8484198-54","safada da silva","rua casada da silva","10:35",31,31,31,1010);
-        Passageiro Teste2 = new Passageiro("8484198-53","gasosa da silva","rua casada da silva","10:35",31,31,31,1010);
-        Passageiro Teste3 = new Passageiro("8484198-54","delicio da silva","rua casada da silva","10:35",31,31,31,1010);
-        Passageiro Teste4 = new Passageiro("8484198-54","sanhado da silva","rua casada da silva","10:35",31,31,31,1010);
-        Passageiro Teste5 = new Passageiro("8484198-54","gasoso da silva","rua casada da silva","10:35",31,31,31,1010);
-        Passageiro Teste6 = new Passageiro("8484198-54","casos bahia da silva","rua casada da silva","10:35",31,31,31,1010);
-        Passageiro Teste7 = new Passageiro("8484198-54","daniel da silva","rua casada da silva","10:35",31,31,31,1010);
-        Passageiro Teste8 = new Passageiro("8484198-54","filipe da silva","rua casada da silva","10:35",31,31,31,1010);
-        Passageiro Teste9 = new Passageiro("8484198-54","danilo da silva","rua casada da silva","10:35",31,31,31,1010);
-        Passageiro Teste10 = new Passageiro("8484198-54","joao da silva","rua casada da silva","10:35",31,31,31,1010);
+
         voo01.cadrastrarPassageiro(Teste1);
         voo01.cadrastrarPassageiro(Teste2);
         voo01.cadrastrarPassageiro(Teste3);

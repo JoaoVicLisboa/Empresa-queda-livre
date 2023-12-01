@@ -42,16 +42,12 @@ public class Voo {
         String CPF;
         String Nome;
         String Endereco;
-        int Telefone;
+        String Telefone;
         int NumPassagem;
         int NumPoltrona;
         int NumVoo;
         String Horario;
-        if (ListaEspera.size() > 5) {
 
-            System.out.println("Fila Cheia, a reserva não pode ser feita.");
-
-        }else {
             System.out.println("Informe o CPF do passageiro:");
             CPF = teclado.nextLine();
             System.out.println("Informe o nome do passageiro: ");
@@ -59,7 +55,7 @@ public class Voo {
             System.out.println("Informe o endereço do passageiro: ");
             Endereco = teclado.nextLine();
             System.out.println("Informe o telefone do passageiro: ");
-            Telefone = teclado.nextInt();
+            Telefone = teclado.nextLine();
             System.out.println("Informe o horario do passageiro: ");
             Horario = teclado.nextLine();
             System.out.println("Informe o numero da passagem do passageiro: ");
@@ -68,9 +64,9 @@ public class Voo {
             NumPoltrona = teclado.nextInt();
             System.out.println("Informe o numero do voo: ");
             NumVoo = teclado.nextInt();
-            Passageiro PassageiroNovo = new Passageiro(CPF,Nome,Endereco,Horario,Telefone,NumPassagem,NumPoltrona,NumVoo);
+            Passageiro PassageiroNovo = new Passageiro(CPF,Nome,Endereco,Telefone,NumPassagem,NumPoltrona,NumVoo,Horario);
             cadrastrarPassageiro(PassageiroNovo);
-        }
+
 
     }
     public static void ExcluirPassageiro(String nomePassageiro){
