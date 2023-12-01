@@ -96,7 +96,7 @@ public class Main {
                 break;
             case 4:
                 System.out.println("Cadastrando Passageiro");
-
+                Voo.adicionarPassageiro();
                 break;
             case 5:
                 System.out.println("Removendo Passageiro");

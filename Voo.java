@@ -36,6 +36,43 @@ public class Voo {
             System.out.println("Fila Cheia, a reserva não pode ser feita");
         }
     }
+
+    public static void adicionarPassageiro(){
+        Scanner teclado = new Scanner(System.in);
+        String CPF;
+        String Nome;
+        String Endereco;
+        int Telefone;
+        int NumPassagem;
+        int NumPoltrona;
+        int NumVoo;
+        String Horario;
+        if (ListaEspera.size() > 5) {
+
+            System.out.println("Fila Cheia, a reserva não pode ser feita.");
+
+        }else {
+            System.out.println("Informe o CPF do passageiro:");
+            CPF = teclado.nextLine();
+            System.out.println("Informe o nome do passageiro: ");
+            Nome = teclado.nextLine();
+            System.out.println("Informe o endereço do passageiro: ");
+            Endereco = teclado.nextLine();
+            System.out.println("Informe o telefone do passageiro: ");
+            Telefone = teclado.nextInt();
+            System.out.println("Informe o horario do passageiro: ");
+            Horario = teclado.nextLine();
+            System.out.println("Informe o numero da passagem do passageiro: ");
+            NumPassagem = teclado.nextInt();
+            System.out.println("Informe o numero da poltrona do passageiro: ");
+            NumPoltrona = teclado.nextInt();
+            System.out.println("Informe o numero do voo: ");
+            NumVoo = teclado.nextInt();
+            Passageiro PassageiroNovo = new Passageiro(CPF,Nome,Endereco,Horario,Telefone,NumPassagem,NumPoltrona,NumVoo);
+            cadrastrarPassageiro(PassageiroNovo);
+        }
+
+    }
     public static void ExcluirPassageiro(String nomePassageiro){
         for (int repete = 0; repete < Passageiros.size(); repete++) {
             Passageiro passageiro = Passageiros.get(repete);
@@ -46,6 +83,7 @@ public class Voo {
             }
         }
         System.out.println("Passageiro não encontrado");
+
     }
 
     public static void ImprimirPassageiros (){
@@ -74,7 +112,7 @@ public class Voo {
                 return;
             }
         }
-        System.out.println("Passageiro com nome " + Nome + " não encontrado");
+        System.out.println("Passageiro com nome " + Nome + " não encontrado.");
     }
     public static void ExcluirPassageiroListaEspera(String nome){
         for (int repete = 0; repete < ListaEspera.size(); repete++) {
