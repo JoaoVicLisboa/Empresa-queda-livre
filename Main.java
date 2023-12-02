@@ -93,8 +93,7 @@ public class Main {
         System.out.println("[4] Cadastrar Passageiro");
         System.out.println("[5] Remover Passageiro");
         System.out.println("[6] Mostrar Lista de Espera");
-        System.out.println("[7] Excluir Passageiro da Lista");
-        System.out.println("[8] Sair");
+        System.out.println("[7] Sair");
         System.out.println("Digite sua opção:");
         op = in.nextInt();
         return op;
@@ -140,13 +139,6 @@ public class Main {
                 System.out.println("========== Lista de Espera ==================================");
                 voos[NumDeVoo].imprimirListaEspera();
                 break;
-            case 7:
-                System.out.println("Excluindo Passageiro da Lista");
-                System.out.println("Digite o nome do passageiro a ser removido da lista de espera: ");
-                String nomeLista = teclado.nextLine();
-                voos[NumDeVoo].ExcluirPassageiro(nomeLista);
-
-                break;
         }
     }
 
@@ -159,7 +151,7 @@ public class Main {
             do {
                 opM = menuPrincipal(op);
                 menuSecundario(opM, op);
-            } while (opM != 8);
+            } while (opM != 7);
         }
         teclado.close();
     }
