@@ -4,12 +4,12 @@ public class Passageiro {
     private final String nome;
     private final String endereco;
     private final String telefone;
-    private int numPassagem;
-    private int numPoltrona;
+    private String numPassagem;
+    private String numPoltrona;
     private int numVoo;
     private String horario;
 
-    public Passageiro(String CPF, String nome, String endereco, String telefone, int numPassagem, int numPoltrona, int numVoo, String horario) {
+    public Passageiro(String CPF, String nome, String endereco, String telefone, String numPassagem, String numPoltrona, int numVoo, String horario) {
         this.CPF = CPF;
         this.nome = nome;
         this.endereco = endereco;
@@ -20,9 +20,9 @@ public class Passageiro {
         this.horario = horario;
     }
 
-    public int getNumPassagem() {return numPassagem;}
+    public String getNumPassagem() {return numPassagem;}
 
-    public int getNumPoltrona() {return numPoltrona;}
+    public String getNumPoltrona() {return numPoltrona;}
 
     public String getCPF() {
         return CPF;
