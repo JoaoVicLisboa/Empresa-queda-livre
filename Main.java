@@ -73,21 +73,6 @@ public class Main {
         return nVoo;
 
     }
-    public static int NumDeVoo() {
-        int op;
-        System.out.println();
-        System.out.println("Informe o voo que deseja saber as opões: ");
-        System.out.println("[1]- BH-RIO");
-        System.out.println("[2]- BH-SP");
-        System.out.println("[3]- BH-BRASILIA");
-        op = teclado.nextInt();
-        while (op<1 || op>3) {
-            System.out.println("Opcao de voo nao encontrada!");
-            System.out.println("Digite novamente:");
-            op = teclado.nextInt();
-        }
-        return op;
-    }
 
     public static int menuPrincipal(int numVoo) {
         int op;
@@ -109,8 +94,7 @@ public class Main {
         System.out.println("[5] Remover Passageiro");
         System.out.println("[6] Mostrar Lista de Espera");
         System.out.println("[7] Excluir Passageiro da Lista");
-        System.out.println("[8] Mostrar Fila de Espera");
-        System.out.println("[9] Sair");
+        System.out.println("[8] Sair");
         System.out.println("Digite sua opção:");
         op = in.nextInt();
         return op;
@@ -154,7 +138,7 @@ public class Main {
                 break;
             case 6:
                 System.out.println("========== Lista de Espera ==================================");
-
+                voos[NumDeVoo].imprimirListaEspera();
                 break;
             case 7:
                 System.out.println("Excluindo Passageiro da Lista");
@@ -163,28 +147,19 @@ public class Main {
                 voos[NumDeVoo].ExcluirPassageiro(nomeLista);
 
                 break;
-            case 8:
-                System.out.println("========== Fila de Espera ===================================");
-                voos[NumDeVoo].imprimirListaEspera();
-
-                break;
-            default:
-                if (op != 9)
-                    System.out.println("Opcao Invalida.");
-                else
-                    System.out.println("Programa encerrado.");
         }
     }
+
 
     public static void main(String[] args) {
         loadData();
         int opM ;
-        int op = NumDeVoo();
+        int op = telaBasica();
         if (op == 1 || op == 2 || op == 3) {
             do {
                 opM = menuPrincipal(op);
                 menuSecundario(opM, op);
-            } while (opM != 0);
+            } while (opM != 8);
         }
         teclado.close();
     }
