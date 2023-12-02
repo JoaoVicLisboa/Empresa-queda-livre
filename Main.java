@@ -1,58 +1,58 @@
 // INTEGRANTES : João Victor de Souza, Danilo Ramos, Felipe Gurgel, Daniel Nunes
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
     static Voo[] voos = new Voo[3];
     static Scanner teclado = new Scanner(System.in);
     public static void loadData() {
         //cadastrar Passageiros
-        Scanner txtPassageiros = new Scanner(Main.class.getResourceAsStream("Banco de Dados.txt"));
+        Scanner txtPassageiros = new Scanner(Main.class.getResourceAsStream("BancoDeDados.txt"));
         String cpf;
         String nome;
         String endereco;
         String telefone;
-        int numPassagem;
-        int numPoltrona;
+        String numPassagem;
+        String numPoltrona;
         int nVoo;
         String horario;
 
         voos[0] =new Voo("BH-RIO");
         for (int i = 0; i < 15; i++) {
-            nome = txtPassageiros.nextLine();
             cpf = txtPassageiros.nextLine();
+            nome = txtPassageiros.nextLine();
             endereco = txtPassageiros.nextLine();
             telefone = txtPassageiros.nextLine();
-            horario = txtPassageiros.nextLine();
-            numPassagem = Integer.parseInt(txtPassageiros.nextLine());
-            numPoltrona = Integer.parseInt(txtPassageiros.nextLine());
+            numPassagem = txtPassageiros.nextLine();
+            numPoltrona = txtPassageiros.nextLine();
             nVoo = Integer.parseInt(txtPassageiros.nextLine());
+            horario = txtPassageiros.nextLine();
             Passageiro p = new Passageiro(cpf, nome, endereco, telefone, numPassagem, numPoltrona, nVoo, horario);
             voos[0].cadastrarPas(p);
         }
         voos[1] =new Voo("BH-SP");
         for (int i = 0; i < 15; i++) {
-            nome = txtPassageiros.nextLine();
             cpf = txtPassageiros.nextLine();
+            nome = txtPassageiros.nextLine();
             endereco = txtPassageiros.nextLine();
             telefone = txtPassageiros.nextLine();
-            horario = txtPassageiros.nextLine();
-            numPassagem = Integer.parseInt(txtPassageiros.nextLine());
-            numPoltrona = Integer.parseInt(txtPassageiros.nextLine());
+            numPassagem = txtPassageiros.nextLine();
+            numPoltrona = txtPassageiros.nextLine();
             nVoo = Integer.parseInt(txtPassageiros.nextLine());
+            horario = txtPassageiros.nextLine();
             Passageiro p = new Passageiro(cpf, nome, endereco, telefone, numPassagem, numPoltrona, nVoo, horario);
             voos[1].cadastrarPas(p);
         }
         voos[2] =new Voo("BH-BRASILIA");
         for (int i = 0; i < 10; i++) {
-            nome = txtPassageiros.nextLine();
             cpf = txtPassageiros.nextLine();
+            nome = txtPassageiros.nextLine();
             endereco = txtPassageiros.nextLine();
             telefone = txtPassageiros.nextLine();
-            horario = txtPassageiros.nextLine();
-            numPassagem = Integer.parseInt(txtPassageiros.nextLine());
-            numPoltrona = Integer.parseInt(txtPassageiros.nextLine());
+            numPassagem = txtPassageiros.nextLine();
+            numPoltrona = txtPassageiros.nextLine();
             nVoo = Integer.parseInt(txtPassageiros.nextLine());
+            horario = txtPassageiros.nextLine();
             Passageiro p = new Passageiro(cpf, nome, endereco, telefone, numPassagem, numPoltrona, nVoo, horario);
             voos[2].cadastrarPas(p);
         }
@@ -123,7 +123,7 @@ public class Main {
             NumDeVoo = 1;
         } else if (NumDeVoo == 3) {
             NumDeVoo = 2;
-        }        
+        }
         switch (op) {
             case 1:
                 System.out.println("========== Lista de Passageiros =============================");
@@ -190,6 +190,5 @@ public class Main {
     }
 
 }
-
 
 
