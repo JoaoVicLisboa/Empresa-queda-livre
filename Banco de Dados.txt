@@ -1,318 +1,280 @@
 123.456.789-01
 João da Silva
-Rua Fictícia, 123
-(11) 98765-4321
+Avenida Perimetral 409
+(11)98765-4321
 P123456
-10A
-VOO123
+1A
+1010
 14:00
-
-
 234.567.890-12
 Maria Oliveira
-Avenida Imaginária, 456
-(21) 87654-3210
+Rua Jeremias Lizário de Moura 1185
+(21)87654-3210
 P234567
-15B
-VOO456
-16:30
-
-
-345.678.901-23
-Carlos Pereira
-Travessa Inventada, 789
-(31) 76543-2109
-P345678
-20C
-VOO789
-10:45
-
-
+1B
+1010
+14:00
 456.789.012-34
 Ana Santos
-Praça dos Sonhos, 987
-(41) 65432-1098
+Passagem Bandeirante 1532
+(41)65432-1098
 P456789
-5D
-VOO987
-19:15
-
-
+2A
+1010
+14:00
 567.890.123-45
 Felipe Costa
-Alameda Abstrata, 876
-(51) 54321-0987
+Travessa Cassimiro de Abreu 607
+(51)54321-0987
 P567890
-12E
-VOO654
-22:00
-
+2B
+1010
+14:00
 678.901.234-56
 Juliana Martins
-Rodovia Imaginada, 543
-(61) 43210-9876
+Rua Odilio Melchelt Mendes 526
+(61)43210-9876
 P678901
-8F
-VOO321
-13:20
-
+3A
+1010
+14:00
 789.012.345-67
 Lucas Lima
 Rua dos Sonhos, 234
-(71) 32109-8765
+(71)32109-8765
 P789012
-18G
-VOO012
-08:45
-
+3B
+1010
+14:00
 890.123.456-78
 Renata Mendes
-Travessa Irreal, 678
+Alameda Um 1259
 (81) 21098-7654
 P890123
-3H
-VOO345
-17:30
-
+4A
+1010
+14:00
 901.234.567-89
 Roberto Oliveira
 Avenida dos Desejos, 567
-(91) 10987-6543
+(91)10987-6543
 P901234
-14I
-VOO678
-11:10
-
+4B
+1010
+14:00
 012.345.678-90
 Camila Souza
 Praça das Ilusões, 345
-(01) 98765-4321
+(01)98765-4321
 P012345
-7J
-VOO901
-20:50
-
+5A
+1010
+14:00
 112.233.445-56
 Amanda Pereira
 Rua dos Sonhos, 789
 (11) 2233-4455
 P112233
-22A
-VOO112
-15:30
-
-224.466.889-00
-André Oliveira
-Avenida Fantasia, 123
-(22) 4466-8899
-P224466
-10B
-VOO224
-17:00
-
-336.699.112-23
-Mariana Costa
-Alameda Ilusória, 456
-(33) 6699-1122
-P336699
-15C
-VOO336
-11:45
-
-448.811.335-34
-Pedro Santos
-Praça dos Desejos, 789
-(44) 8811-3355
-P448811
-20D
-VOO448
-18:30
-
-010.233.345-90
-Lucas Costa
-Praça dos Desejos, 345
-(01) 0233-3456
-P010233
-7J
-VOO010
-19:00
-
-121.344.456-01
-Isabela Silva
-Alameda Abstrata, 987
-(12) 1344-4567
-P121344
-22A
-VOO121
-15:00
-
-232.455.567-12
-Guilherme Oliveira
-Rua dos Sonhos, 123
-(23) 2455-5678
-P232455
-10B
-VOO232
-17:15
-
-343.566.678-23
-Larissa Costa
-Avenida Fantasia, 456
-(34) 3566-6789
-P343566
-15C
-VOO343
-11:30
-
-454.677.789-34
-Gabriel Santos
-Praça dos Desejos, 789
-(45) 4677-7890
-P454677
-20D
-VOO454
-18:15
-
-565.788.890-45
-Beatriz Lima
-Rodovia Imaginária, 987
-(56) 5788-8901
-P565788
-5E
-VOO565
-20:45
-
+5B
+1010
+14:00
 676.899.001-56
 Diego Mendes
 Rua Inventada, 678
 (67) 6899-0012
 P676899
-8F
-VOO676
-13:50
-
+1C
+1010
+14:00
 787.233.234-67
 Julia Oliveira
 Rua dos Sonhos, 345
 (78) 7233-2345
 P787233
-10B
-VOO787
-14:45
-
+2C
+1010
+14:00
 898.344.445-78
 Marcos Santos
 Avenida dos Desejos, 567
 (89) 8344-4456
 P898344
-15C
-VOO898
-16:20
-
+3C
+1010
+14:00
 909.455.556-89
 Renata Lima
 Rua da Imaginação, 789
 (90) 9455-5567
 P909455
-20D
-VOO909
-19:00
-
+4C
+1010
+14:00
 010.566.667-90
 Gustavo Costa
 Alameda das Ilusões, 123
 (01) 0566-6678
 P010566
-5E
-VOO010
-21:30
-
+5C
+1010
+14:00
+224.466.889-00
+André Oliveira
+Avenida Fantasia, 123
+(22) 4466-8899
+P224466
+1A
+2020
+17:00
+336.699.112-23
+Mariana Costa
+Alameda Ilusória, 456
+(33) 6699-1122
+P336699
+1B
+2020
+17:00
+345.678.901-23
+Carlos Pereira
+Travessa Inventada, 789
+(31) 76543-2109
+P345678
+2A
+2020
+17:00
+448.811.335-34
+Pedro Santos
+Praça dos Desejos, 789
+(44) 8811-3355
+P448811
+2B
+2020
+17:00
+010.233.345-90
+Lucas Costa
+Praça dos Desejos, 345
+(01) 0233-3456
+P010233
+3A
+2020
+17:00
+121.344.456-01
+Isabela Silva
+Alameda Abstrata, 987
+(12) 1344-4567
+P121344
+3B
+2020
+17:00
+232.455.567-12
+Guilherme Oliveira
+Rua dos Sonhos, 123
+(23) 2455-5678
+P232455
+4A
+2020
+17:00
+343.566.678-23
+Larissa Costa
+Avenida Fantasia, 456
+(34) 3566-6789
+P343566
+4B
+2020
+17:00
+454.677.789-34
+Gabriel Santos
+Praça dos Desejos, 789
+(45) 4677-7890
+P454677
+5A
+2020
+17:00
+565.788.890-45
+Beatriz Lima
+Rodovia Imaginária, 987
+(56) 5788-8901
+P565788
+5B
+2020
+17:00
 121.677.778-01
 Laura Mendes
-Rua da Imaginação, 456
+Rua Coriolano Pompeu Paes de Campos 1591
 (12) 1677-7789
 P121677
-8F
-VOO121
-12:15
-
+1C
+2020
+17:00
 232.788.889-12
 Rafael Oliveira
 Praça dos Sonhos, 789
 (23) 2788-8890
 P232788
-18G
-VOO232
-10:45
-
+2C
+2020
+17:00
 343.899.990-23
 Julia Souza
 Avenida Abstrata, 234
 (34) 3899-9901
 P343899
-3H
-VOO343
-15:20
-
+3C
+2020
+17:00
 454.010.001-34
 Victor Lima
 Rua dos Desejos, 567
 (45) 4010-0012
 P454010
-14I
-VOO454
-17:55
-
+4C
+2020
+17:00
 565.121.112-45
 Juliana Oliveira
 Alameda da Ilusão, 789
 (56) 5121-1123
 P565121
-7J
-VOO565
-09:30
-
+5C
+2020
+17:00
 676.232.223-56
 André Martins
 Rua Inventada, 678
 (67) 6232-2234
 P676232
-22A
-VOO676
-16:10
-
+1A
+3030
+21:00
 787.343.334-67
 Larissa Costa
 Avenida da Imaginação, 123
 (78) 7343-3345
 P787343
-10B
-VOO787
-14:45
-
+1B
+3030
+21:00
 898.454.445-78
 Marcos Santos
 Alameda dos Desejos, 567
 (89) 8454-4456
 P898454
-15C
-VOO898
-16:20
-
+2A
+3030
+21:00
 909.565.556-89
 Renata Lima
 Rua da Imaginação, 789
 (90) 9565-5567
 P909565
-20D
-VOO909
-19:00
-
+2B
+3030
+21:00
 010.676.667-90
 Gustavo Costa
 Praça das Ilusões, 123
 (01) 0676-6678
 P010676
-5E
-VOO010
-21:30
+3A
+3030
+21:00
