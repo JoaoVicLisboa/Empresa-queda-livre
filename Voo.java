@@ -93,7 +93,7 @@ public class Voo {
         for (Passageiro pas:passageiros) {
             if (pas!=null){
                 System.out.println("Passageiro: "+pas.getNome());
-                System.out.print("CPF: "+pas.getCpf() + ", Numero da Passagem: ");
+                System.out.print("CPF: "+pas.getCPF() + ", Numero da Passagem: ");
                 System.out.print(pas.getNumPassagem()+ ", Numero da Poltrona: ");
                 System.out.println(pas.getNumPoltrona());
             }
@@ -103,7 +103,7 @@ public class Voo {
         for (Passageiro pas:listEspera) {
             if (pas!=null){
                 System.out.println("Passageiro: "+pas.getNome());
-                System.out.print("CPF: "+pas.getCpf() + ", Numero da Passagem: ");
+                System.out.print("CPF: "+pas.getCPF() + ", Numero da Passagem: ");
                 System.out.print(pas.getNumPassagem()+ ", Numero da Poltrona: ");
                 System.out.println(pas.getNumPoltrona());
             }
@@ -149,7 +149,7 @@ public class Voo {
     public boolean ProcurarPassageiroCpf(String cpf){
         int teste=1;
         for (int i = 0; i < totalPassageiros ; i++) {
-            if (cpf.equalsIgnoreCase(passageiros[i].getCpf())){
+            if (cpf.equalsIgnoreCase(passageiros[i].getCPF())){
                 System.out.println(passageiros[i]);
                 return true;
             }else {
@@ -157,7 +157,7 @@ public class Voo {
             }
         }
         for (int i = 0; i < totalEspera ; i++) {
-            if (cpf.equalsIgnoreCase(listEspera[i].getCpf())){
+            if (cpf.equalsIgnoreCase(listEspera[i].getCPF())){
                 System.out.println(listEspera[i]);
                 return true;
             }else {
