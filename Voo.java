@@ -1,128 +1,213 @@
-import java.util.*;
-
+// INTEGRANTES : João Victor de Souza, Danilo Ramos, Felipe Gurgel, Daniel Nunes
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Voo {
-    private String Destino;
-    private String Origem;
-    private int NumVoo;
 
-    private static ArrayList<Passageiro> ListaEspera = new ArrayList<Passageiro>();
-    private static ArrayList<Passageiro> Passageiros = new ArrayList<Passageiro>();
+    private Passageiro[] passageiros;
+    private Passageiro[] listEspera;
+    private final String nomeVoo;
+    private int capMaxPassageiros = 10;
+    private int capMaxListEspera = 5;
+    private int totalPassageiros;
+    private int totalEspera;
 
-    public Voo( String origem, String destino, int numVoo) {
-        Origem = origem;
-        Destino = destino;
-        NumVoo = numVoo;
+    public Voo( String nomeVoo) {
+        this.passageiros = new Passageiro[capMaxPassageiros];
+        this.listEspera = new Passageiro[capMaxListEspera];
+        this.nomeVoo = nomeVoo;
+        this.totalPassageiros = 0;
+        this.totalEspera = 0;
+    }
+
+    public boolean cadastrarPas(Passageiro p) {
+        if (totalPassageiros < capMaxPassageiros){
+            passageiros[totalPassageiros] = p;
+            totalPassageiros++;
+            System.out.println("Passageiro adicionado no voo com sucesso.");
+            return true;
+        } else if (totalEspera<capMaxListEspera) {
+            listEspera[totalEspera]=p;
+            totalEspera++;
+            System.out.println("Passageiro adicionado na fila de espera!");
+            return true;
+        }else {
+            return false;
+        }
+    }
+
+
+    public boolean ExcluirPassageiro(String nome) {
+        int teste=1;
+        for (int i = 0; i < totalPassageiros ; i++) {
+            if (nome.equalsIgnoreCase(passageiros[i].getNome())){
+                if (totalEspera>0){
+                    passageiros[i]=listEspera[0];
+                    for (int o = 0;o<totalEspera;o++){
+                        if (o == 4) {
+                            listEspera[o]=null;
+                        }else {
+                            listEspera[o] = listEspera[o + 1];
+                        }
+                    }
+                    totalEspera--;
+                    System.out.println("Passageiro "+nome+" retirado com sucesso e foi adicionado um passageiro da lista de espera!");
+                    return true;
+                }else {
+                    for (int o = i;o<totalPassageiros;o++){
+                        if (o == 9) {
+                            passageiros[o]=null;
+                        }else {
+                            passageiros[o] = passageiros[o + 1];
+                        }
+                    }
+                    totalPassageiros--;
+                    System.out.println("Passageiro "+nome+" retirado com sucesso");
+                }
+                return true;
+            }else {
+                teste=0;
+            }
+        }
+        for (int i = 0; i < totalEspera ; i++) {
+            if (nome.equalsIgnoreCase(listEspera[i].getNome())){
+                for (int o=i;o<totalEspera;o++){
+                    listEspera[o]=listEspera[o+1];
+                }
+                totalEspera--;
+                System.out.println("Passageiro "+nome+" retirado com sucesso da fila de espera!");
+                return true;
+            }else {
+                teste=0;
+            }
+        }
+
+        if (teste==0){
+            System.out.println("Passageiro não consta nesse voo");
+            return false;
+        }else {
+            return true;
+        }
+    }
+    public void ImprimirPassageiros(){
+        for (Passageiro pas:passageiros) {
+            if (pas!=null){
+                System.out.println("Passageiro: "+pas.getNome());
+                System.out.print("CPF: "+pas.getCpf() + ", Numero da Passagem: ");
+                System.out.print(pas.getNumPassagem()+ ", Numero da Poltrona: ");
+                System.out.println(pas.getNumPoltrona());
+            }
+        }
+    }
+    public void imprimirListaEspera(){
+        for (Passageiro pas:listEspera) {
+            if (pas!=null){
+                System.out.println("Passageiro: "+pas.getNome());
+                System.out.print("CPF: "+pas.getCpf() + ", Numero da Passagem: ");
+                System.out.print(pas.getNumPassagem()+ ", Numero da Poltrona: ");
+                System.out.println(pas.getNumPoltrona());
+            }
+        }
+    }
+    public boolean AdicionarPassageiro(){
+        Scanner tec = new Scanner(System.in);
+        String cpf;
+        String nome;
+        String endereco;
+        String telefone;
+        int numPassagem;
+        int numPoltrona;
+        int numVoo;
+        String horario;
+        if (totalEspera==capMaxListEspera){
+            System.out.println("Fila Cheia, a reserva não pode ser feita.");
+            return false;
+        }
+        else {
+            System.out.println("Informe o CPF do passageiro:");
+            cpf = tec.nextLine();
+            System.out.println("Informe o nome do passageiro: ");
+            nome = tec.nextLine();
+            System.out.println("Informe o endereço do passageiro: ");
+            endereco = tec.nextLine();
+            System.out.println("Informe o telefone do passageiro: ");
+            telefone = tec.nextLine();
+            System.out.println("Informe o horario do passageiro: ");
+            horario = tec.nextLine();
+            System.out.println("Informe o numero da passagem do passageiro: ");
+            numPassagem = tec.nextInt();
+            System.out.println("Informe o numero da poltrona do passageiro: ");
+            numPoltrona = tec.nextInt();
+            System.out.println("Informe o numero do voo: ");
+            numVoo = tec.nextInt();
+            Passageiro passageiro = new Passageiro(cpf, nome, endereco, telefone, numPassagem, numPoltrona, numVoo, horario);
+            cadastrarPas(passageiro);
+            return true;
+        }
+    }
+
+    public boolean ProcurarPassageiroCpf(String cpf){
+        int teste=1;
+        for (int i = 0; i < totalPassageiros ; i++) {
+            if (cpf.equalsIgnoreCase(passageiros[i].getCpf())){
+                System.out.println(passageiros[i]);
+                return true;
+            }else {
+                teste=0;
+            }
+        }
+        for (int i = 0; i < totalEspera ; i++) {
+            if (cpf.equalsIgnoreCase(listEspera[i].getCpf())){
+                System.out.println(listEspera[i]);
+                return true;
+            }else {
+                teste=0;
+            }
+        }
+
+        if (teste==0){
+            System.out.println("Passageiro não consta nesse voo");
+            return false;
+        }else {
+            return true;
+        }
+    }
+
+
+
+    public boolean ProcurarPassageiroNome(String nome){
+        int teste=1;
+        for (int i = 0; i < totalPassageiros ; i++) {
+            if (nome.equalsIgnoreCase(passageiros[i].getNome())){
+                System.out.println(passageiros[i]);
+                return true;
+            }else {
+                teste=0;
+            }
+        }
+        for (int i = 0; i < totalEspera ; i++) {
+            if (nome.equalsIgnoreCase(listEspera[i].getNome())){
+                System.out.println(listEspera[i]);
+                return true;
+            }else {
+                teste=0;
+            }
+        }
+
+        if (teste==0){
+            System.out.println("Passageiro não consta nesse voo");
+            return false;
+        }else {
+            return true;
+        }
     }
 
     @Override
     public String toString() {
         return "Voo{" +
-                ", Origem='" + Origem + '\'' +
-                "Destino='" + Destino + '\'' +
-                ", NumVoo=" + NumVoo +
+                "passageiros=" + Arrays.toString(passageiros) +
+                ", listEspera=" + Arrays.toString(listEspera) +
+                ", nome do Voo=" + nomeVoo +
                 '}';
     }
-
-    public static void cadrastrarPassageiro(Passageiro passageiro){
-
-        if (Passageiros.size() < 10){
-            Passageiros.add(passageiro);
-            System.out.println("Passageiro adicionado no voo com sucesso");
-        }else if (ListaEspera.size() < 5){
-            ListaEspera.add(passageiro);
-            System.out.println("Passageiro adicionado na fila de espera");
-        }else {
-            System.out.println("Fila Cheia, a reserva não pode ser feita");
-        }
-    }
-
-    public static void adicionarPassageiro(){
-        Scanner teclado = new Scanner(System.in);
-        String CPF;
-        String Nome;
-        String Endereco;
-        String Telefone;
-        int NumPassagem;
-        int NumPoltrona;
-        int NumVoo;
-        String Horario;
-
-            System.out.println("Informe o CPF do passageiro:");
-            CPF = teclado.nextLine();
-            System.out.println("Informe o nome do passageiro: ");
-            Nome = teclado.nextLine();
-            System.out.println("Informe o endereço do passageiro: ");
-            Endereco = teclado.nextLine();
-            System.out.println("Informe o telefone do passageiro: ");
-            Telefone = teclado.nextLine();
-            System.out.println("Informe o horario do passageiro: ");
-            Horario = teclado.nextLine();
-            System.out.println("Informe o numero da passagem do passageiro: ");
-            NumPassagem = teclado.nextInt();
-            System.out.println("Informe o numero da poltrona do passageiro: ");
-            NumPoltrona = teclado.nextInt();
-            System.out.println("Informe o numero do voo: ");
-            NumVoo = teclado.nextInt();
-            Passageiro PassageiroNovo = new Passageiro(CPF,Nome,Endereco,Telefone,NumPassagem,NumPoltrona,NumVoo,Horario);
-            cadrastrarPassageiro(PassageiroNovo);
-
-
-    }
-    public static void ExcluirPassageiro(String nomePassageiro){
-        for (int repete = 0; repete < Passageiros.size(); repete++) {
-            Passageiro passageiro = Passageiros.get(repete);
-            if (passageiro.getNome().equals(nomePassageiro)) {
-                Passageiros.remove(repete);
-                System.out.println("Passageiro removido com sucesso");
-                return;
-            }
-        }
-        System.out.println("Passageiro não encontrado");
-
-    }
-
-    public static void ImprimirPassageiros (){
-        System.out.println(Passageiros);
-    }
-    public static void ImprimirListaEspera (){
-        System.out.println(ListaEspera);
-    }
-    public static void ProcurarPassageiroCpf(String CPF){
-        for (int repete = 0; repete < Passageiros.size(); repete++) {
-            Passageiro passageiro = Passageiros.get(repete);
-            if (passageiro.getCPF().equals(CPF)) {
-                System.out.println("Informações do passageiro com CPF " + CPF + ":");
-                System.out.println(passageiro);
-                return;
-            }
-        }
-        System.out.println("Passageiro com CPF " + CPF + " não encontrado");
-    }
-    public static void ProcurarPassageiroNome(String Nome){
-        for (int repete = 0; repete < Passageiros.size(); repete++) {
-            Passageiro passageiro = Passageiros.get(repete);
-            if (passageiro.getNome().equals(Nome)) {
-                System.out.println("Informações do passageiro com nome " + Nome + ":");
-                System.out.println(passageiro);
-                return;
-            }
-        }
-        System.out.println("Passageiro com nome " + Nome + " não encontrado.");
-    }
-    public static void ExcluirPassageiroListaEspera(String nome){
-        for (int repete = 0; repete < ListaEspera.size(); repete++) {
-            Passageiro passageiro = ListaEspera.get(repete);
-            if (passageiro.getNome().equals(nome)) {
-                ListaEspera.remove(repete);
-                System.out.println("Passageiro com nome " + nome + " removido da lista de espera com sucesso");
-                return;
-            }
-        }
-        System.out.println("Passageiro com nome " + nome + " não encontrado na lista de espera");
-    }
-
-
-
-
 }
