@@ -1,6 +1,6 @@
 // INTEGRANTES : João Victor de Souza, Danilo Ramos, Felipe Gurgel, Daniel Nunes
 public class Passageiro {
-    private final String cpf;
+    private final String CPF;
     private final String nome;
     private final String endereco;
     private final String telefone;
@@ -9,8 +9,8 @@ public class Passageiro {
     private int numVoo;
     private String horario;
 
-    public Passageiro(String cpf, String nome, String endereco, String telefone, int numPassagem, int numPoltrona, int numVoo, String horario) {
-        this.cpf = cpf;
+    public Passageiro(String CPF, String nome, String endereco, String telefone, int numPassagem, int numPoltrona, int numVoo, String horario) {
+        this.CPF = CPF;
         this.nome = nome;
         this.endereco = endereco;
         this.telefone = telefone;
@@ -24,8 +24,8 @@ public class Passageiro {
 
     public int getNumPoltrona() {return numPoltrona;}
 
-    public String getCpf() {
-        return cpf;
+    public String getCPF() {
+        return CPF;
     }
 
     public String getNome() {
@@ -35,7 +35,7 @@ public class Passageiro {
     @Override
     public String toString() {
         return "Passageiro{" +
-                "cpf='" + cpf + '\'' +
+                "cpf='" + CPF + '\'' +
                 ", nome='" + nome + '\'' +
                 ", endereco='" + endereco + '\'' +
                 ", telefone='" + telefone + '\'' +
