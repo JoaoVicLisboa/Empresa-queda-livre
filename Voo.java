@@ -115,8 +115,8 @@ public class Voo {
         String nome;
         String endereco;
         String telefone;
-        int numPassagem;
-        int numPoltrona;
+        String numPassagem;
+        String numPoltrona;
         int numVoo;
         String horario;
         if (totalEspera==capMaxListEspera){
@@ -135,9 +135,9 @@ public class Voo {
             System.out.println("Informe o horario do passageiro: ");
             horario = tec.nextLine();
             System.out.println("Informe o numero da passagem do passageiro: ");
-            numPassagem = tec.nextInt();
+            numPassagem = tec.nextLine();
             System.out.println("Informe o numero da poltrona do passageiro: ");
-            numPoltrona = tec.nextInt();
+            numPoltrona = tec.nextLine();
             System.out.println("Informe o numero do voo: ");
             numVoo = tec.nextInt();
             Passageiro passageiro = new Passageiro(cpf, nome, endereco, telefone, numPassagem, numPoltrona, numVoo, horario);
